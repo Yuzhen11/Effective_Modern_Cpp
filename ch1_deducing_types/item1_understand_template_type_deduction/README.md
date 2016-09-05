@@ -23,7 +23,9 @@ not work for `const`.
 ### Case 1: *ParamType* is a reference or pointer, but not a universal reference
 
 Rules:
+
 1. If *expr*'s type is a reference, ignore the reference part.
+
 2. Then pattern-match *expr*'s type against *ParamType* to determine *T*.
 
 ### Case 2: *ParamType* is a Universal Reference
@@ -31,11 +33,12 @@ Rules:
 Universal Reference behaves differently for lvalue and rvalue.
 
 Rules:
+
 1. If *expr* is an lvalue, both *T* and *ParamType* is deduced to be lvalue references.
 
-    Unusual.
+Unusual.
 
-    Only situation in template type deduction where T is deduced to be a reference.
+Only situation in template type deduction where T is deduced to be a reference.
 
 2. If *expr* is an rvalue, the normal (case 1) rules apply.
 
@@ -44,7 +47,9 @@ Rules:
 Pass by value!
 
 Rules:
+
 1. If *expr* is a reference, ignore the reference part
+
 2. Ignore const, volatile
 
 Caution: const is ignored only for by-value parameters. Pointer to const is preserved.
