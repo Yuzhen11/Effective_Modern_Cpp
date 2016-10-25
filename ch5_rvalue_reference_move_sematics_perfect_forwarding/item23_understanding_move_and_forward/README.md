@@ -4,7 +4,15 @@ A parameter is always lvalue, even if its type is an rvalue reference!!!
 
     void f(Widget&& w);
 
-w is an lvalue, even though its type is rvalue-reference-to-Widget.
+Parameter w is an lvalue, even though its type is rvalue-reference-to-Widget.
+
+```c++
+void f(Widget&& w) {
+    Widget ww(std::move(w));  // call move ctor, std::move returns a rvalue reference
+    Widget ww2(w);  // call copy ctor, even though w looks like a rvalue ...
+}
+```
+Looks confusing. Maybe we should just remember that... Parameter w is always an lvalue.
 
 std::move and std::forward are merely template functions.
 
