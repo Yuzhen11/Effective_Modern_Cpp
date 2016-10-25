@@ -42,7 +42,7 @@ So, copy rather than move!!!
 1. Don't declare objects const if you want to be able to move from them.
 Move requests on const objects are silently transformed into copy operations.
 
-2. std::mvoe not only doesn't actually move anything, it doesn't even guarantee 
+2. std::move not only doesn't actually move anything, it doesn't even guarantee 
 that the object it's casting will be eligible to be moved.
 
 ## std::forward

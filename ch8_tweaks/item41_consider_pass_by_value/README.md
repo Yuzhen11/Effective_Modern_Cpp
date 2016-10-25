@@ -27,7 +27,7 @@ Approach 2:
     class Widget {
     public:
         template<typename T>
-        void addName(T&& newName) {   // take lvalue and ravlue
+        void addName(T&& newName) {   // take lvalue and rvalue
             names.push_back(std::forward<T>(newNamer));
         }
     private:
@@ -47,7 +47,7 @@ Approach 3:
 
     class Widget {
     public:
-        void addName(std::string newName) {   // take lvalue and ravlue
+        void addName(std::string newName) {   // take lvalue and rvalue
             names.push_back(std::move(newNamer));
         }
     private:

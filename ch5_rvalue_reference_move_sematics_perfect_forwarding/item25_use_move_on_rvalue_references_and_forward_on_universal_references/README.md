@@ -136,7 +136,7 @@ universal references the last time each is used.
 * Do the same thing for rvalue references and universal references
 being returned from functions that return by value.
 
-* Never apply std::mvoe or std::forward to local object
+* Never apply std::move or std::forward to local object
 if they would otherwise be eligible for the return value optimization.
 
 

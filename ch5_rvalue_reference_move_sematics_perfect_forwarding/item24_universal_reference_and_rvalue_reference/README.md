@@ -1,4 +1,4 @@
-# Item 24: Distinguish universal references from ravlue references
+# Item 24: Distinguish universal references from rvalue references
 
 ## rvalue reference and universal reference
 
