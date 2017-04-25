@@ -31,7 +31,7 @@ Universal reference should be cast to rvalues only if they are initialized with 
 
 * Shoule not use std::move with universal references, because that can have the effect of unexpectedly
 modifying lvalues. See cpp.
-
+```c++
     template<typename T>
     void setName(T&& newName) {
         name = std::move(newName); // Compiles, but bad, bad, bad!
@@ -46,6 +46,7 @@ modifying lvalues. See cpp.
     auto n = getWidgetName();  // n is a local variable
     
     w.setName(n);  // move n into w! n's value now unknown
+```
 
 ##  What about replace universal reference with two functions?
 
